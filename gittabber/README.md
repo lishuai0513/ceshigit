@@ -1,4 +1,4 @@
-# gittabber
+# tarbar
 
 ## Project setup
 ```

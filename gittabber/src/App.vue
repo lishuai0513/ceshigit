@@ -1,28 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TatbBar>
+      <TabBarItem path='/home' activeColor='pink'>
+        <img slot="item-icon" src="@/assets/img/tabbar/首页.png" alt="" />
+        <img
+          slot="item-icon-active"
+          src="./assets/img/tabbar/首页1.png"
+        />
+        <div slot="item-text">首页</div>
+      </TabBarItem>
+      <TabBarItem path='/category' activeColor='blue'>
+        <img slot="item-icon" src="./assets/img/tabbar/分类.png" alt="" />
+        <img
+          slot="item-icon-active"
+          src="./assets/img/tabbar/分类1.png"
+        />
+        <div slot="item-text">分类</div>
+      </TabBarItem>
+      <TabBarItem path='/cart' activeColor='yellow'>
+        <img slot="item-icon" src="./assets/img/tabbar/购物车.png" alt="" />
+        <img
+          slot="item-icon-active"
+          src="./assets/img/tabbar/购物车1.png"
+        />
+        <div slot="item-text">购物车</div>
+      </TabBarItem>
+      <TabBarItem path='/profile' activeColor='blue'>
+        <img slot="item-icon" src="./assets/img/tabbar/我的.png" alt="" />
+        <img
+          slot="item-icon-active"
+          src="./assets/img/tabbar/我的1.png"
+        />
+        <div slot="item-text">我的</div>
+      </TabBarItem>
+    </TatbBar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TatbBar from "@/components/common/tabbar/tabbar";
+import TabBarItem from "@/components/common/tabbar/tabbaritem";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TatbBar,
+    TabBarItem,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+@import "./assets/css/base.css";
 </style>
